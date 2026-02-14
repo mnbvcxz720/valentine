@@ -71,17 +71,23 @@ Will you be my Valentine? 💕
 <img id="slide" src="IMG-20260128-WA0001.jpg">
 </div>
 
-<!-- Background Music -->
-<audio id="music" autoplay loop>
-  <source src="Eppadi Vandhaayo-…mp3" type="audio/mpeg">
-</audio>
+<!-- background music -->
+  <!-- Tamil love song background -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/https://youtu.be/r3oAMDsC-8Y?si=_op0NrjOL2H5qMEn?autoplay=1&loop=1&playlist=https://youtu.be/r3oAMDsC-8Y?si=_op0NrjOL2H5qMEn"
+frameborder="0" allow="autoplay">
+</iframe>
 
 <script>
 // your uploaded pictures here
 let photos=[
-  "IMG-20260128-WA0013.jpg",
-  "IMG-20260128-WA0014.jpg",
-  "IMG-20260128-WA0015.jpg"
+  "Screenshot_20260214_143104_Instagram.jpg",
+  "Screenshot_20260214_143116_Instagram.jpg",
+  "Screenshot_20260214_143133_Instagram.jpg",
+  "Screenshot_20260214_143036_Instagram.jpg",
+  "Screenshot_20260214_143002_Instagram.jpg",
+  "Screenshot_20260214_143020_Instagram.jpg",
+  "Screenshot_20260214_142942_Instagram.jpg"
 ];
 
 let index=0;
@@ -92,7 +98,23 @@ function showGallery(){
   document.getElementById("gallery").style.display="block";
   startSlideshow();
 }
+  
+// Floating hearts
+setInterval(()=>{
+let h=document.createElement("div");
+h.innerHTML="❤️";
+h.className="heart";
+h.style.left=Math.random()*100+"%";
+document.body.appendChild(h);
+},400);
 
+// Moving NO button
+let no=document.getElementById("noBtn");
+no.addEventListener("mouseover",()=>{
+no.style.top=Math.random()*80+"%";
+no.style.left=Math.random()*80+"%";
+});
+  
 // slideshow function
 function startSlideshow(){
   setInterval(()=>{
