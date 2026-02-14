@@ -2,7 +2,6 @@
 <html>
 <head>
 <title>Happy Valentine's Day ❤️</title>
-
 <style>
 body{
   margin:0;
@@ -51,38 +50,39 @@ button{
   border-radius:15px;
 }
 </style>
-
 </head>
-
 <body>
 
 <!-- Love Message -->
 <div class="card" id="message">
 <h1>❤️ Happy Valentine's Day ❤️</h1>
-
 <p>
-You are someone very special to me.<br><br>
+Rogini, you are someone very special to me.<br><br>
 Will you be my Valentine? 💕
 </p>
 
 <button class="yes" onclick="showGallery()">YES 💖</button>
 <button class="no">NO 😢</button>
-
 </div>
 
 <!-- Photo Gallery -->
 <div id="gallery">
 <h2>Our Beautiful Memories ❤️</h2>
-<img id="slide" src="pic1.jpg">
+<img id="slide" src="IMG-20260128-WA0001.jpg">
 </div>
 
-<script>
+<!-- Background Music -->
+<audio id="music" autoplay loop>
+  <source src="Eppadi Vandhaayo-…mp3" type="audio/mpeg">
+</audio>
 
-// your pictures here
+<script>
+// your uploaded pictures here
 let photos=[
-"pic1.jpg",
-"pic2.jpg",
-"pic3.jpg",
+  "IMG-20260128-WA0001.jpg",
+  "IMG-20260128-WA0002.jpg",
+  "IMG-20260128-WA0003.jpg",
+  "IMG-20260128-WA0004.jpg"
 ];
 
 let index=0;
@@ -91,7 +91,6 @@ let index=0;
 function showGallery(){
   document.getElementById("message").style.display="none";
   document.getElementById("gallery").style.display="block";
-
   startSlideshow();
 }
 
@@ -102,17 +101,7 @@ function startSlideshow(){
     document.getElementById("slide").src=photos[index];
   },3000); // change every 3 seconds
 }
-
 </script>
 
 </body>
-  <audio id="music" loop>
-  <source src="love.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-document.addEventListener("click", function(){
-  document.getElementById("music").play();
-});
-
 </html>
