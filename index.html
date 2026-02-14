@@ -70,14 +70,12 @@ Will you be my Valentine? 💕
 <h2>Our Beautiful Memories ❤️</h2>
 <img id="slide" src="IMG-20260128-WA0001.jpg">
 </div>
+}
 
-<!-- background music -->
-  <!-- Tamil love song background -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/https://youtu.be/r3oAMDsC-8Y?si=_op0NrjOL2H5qMEn?autoplay=1&loop=1&playlist=https://youtu.be/r3oAMDsC-8Y?si=_op0NrjOL2H5qMEn"
-frameborder="0" allow="autoplay">
-</iframe>
-
+ <audio id="music" autoplay loop>
+ <source src="Eppadi Vandhaayo - Video Song _ Aaromaley _  Kishen Das, Shivathmika, Harshath Khan _ Siddhu Kumar.mp3" type="audio/mpeg">
+ </audio>
+  
 <script>
 // your uploaded pictures here
 let photos=[
@@ -100,11 +98,12 @@ function showGallery(){
 }
   
 // Moving NO button
-let no=document.getElementById("noBtn");
-no.addEventListener("mouseover",()=>{
-no.style.top=Math.random()*80+"%";
-no.style.left=Math.random()*80+"%";
-});
+let no=[
+  document.getElementById("noBtn");
+  no.addEventListener("mouseover",()=>{
+  no.style.top=Math.random()*80+"%";
+  no.style.left=Math.random()*80+"%";
+}
   
 // slideshow function
 function startSlideshow(){
