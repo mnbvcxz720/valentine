@@ -99,15 +99,6 @@ function showGallery(){
   startSlideshow();
 }
   
-// Floating hearts
-setInterval(()=>{
-let h=document.createElement("div");
-h.innerHTML="❤️";
-h.className="heart";
-h.style.left=Math.random()*100+"%";
-document.body.appendChild(h);
-},400);
-
 // Moving NO button
 let no=document.getElementById("noBtn");
 no.addEventListener("mouseover",()=>{
