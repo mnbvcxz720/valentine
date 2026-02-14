@@ -1,117 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Valentine's Day ❤️</title>
+<title>Happy Valentine's Day</title>
+
 <style>
 body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(45deg,#ff4e8a,#ff9a9e);
-  font-family:Arial;
-  color:white;
-  text-align:center;
-  overflow:hidden;
+text-align:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:sans-serif;
+overflow:hidden;
+height:100vh;
 }
 
-.card{
-  background:rgba(255,255,255,0.15);
-  padding:40px;
-  border-radius:20px;
-  backdrop-filter:blur(10px);
+h1{
+color:white;
+margin-top:80px;
+font-size:38px;
 }
+
+h2{color:white;}
 
 button{
-  padding:15px 30px;
-  border:none;
-  border-radius:10px;
-  font-size:18px;
-  margin:10px;
-  cursor:pointer;
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:12px;
+margin:15px;
+cursor:pointer;
+transition:0.3s;
 }
 
-.yes{background:#ff2e63;color:white;}
-.no{background:gray;color:white;}
-
-#gallery{
-  display:none;
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:black;
+.yes{
+background:#ff4d6d;
+color:white;
+box-shadow:0 0 20px #ff4d6d;
 }
 
-#gallery img{
-  max-width:80%;
-  max-height:80%;
-  margin-top:60px;
-  border-radius:15px;
+.yes:hover{
+transform:scale(1.1);
+}
+
+.no{
+background:white;
+color:#ff4d6d;
+position:absolute;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
 }
 </style>
 </head>
+
 <body>
 
-<!-- Love Message -->
-<div class="card" id="message">
-<h1>❤️ Happy Valentine's Day ❤️</h1>
-<p>
-You are someone very special to me.<br><br>
-Will you be my Valentine? 💕
-</p>
+<h1>💖 Happy Valentine's Day 💖</h1>
+<h2>I really like you ❤️<br>Will you be my Valentine?</h2>
 
-<button class="yes" onclick="showGallery()">YES 💖</button>
-<button class="no">NO 😢</button>
-</div>
+<button class="yes" onclick="love()">YES ❤️</button>
+<button class="no" id="noBtn">NO 😢</button>
 
-<!-- Photo Gallery -->
-<div id="gallery">
-<h2>Our Beautiful Memories ❤️</h2>
-<img id="slide" src="IMG-20260128-WA0001.jpg">
-</div>
-}
+<!-- background music -->
+<audio autoplay loop>
+<source src="https://youtu.be/r3oAMDsC-8Y?si=_op0NrjOL2H5qMEn">
+</audio>
 
- <audio id="music" autoplay loop>
- <source src="Eppadi Vandhaayo - Video Song _ Aaromaley _  Kishen Das, Shivathmika, Harshath Khan _ Siddhu Kumar.mp3" type="audio/mpeg">
- </audio>
-  
 <script>
-// your uploaded pictures here
-let photos=[
-  "Screenshot_20260214_143104_Instagram.jpg",
-  "Screenshot_20260214_143116_Instagram.jpg",
-  "Screenshot_20260214_143133_Instagram.jpg",
-  "Screenshot_20260214_143036_Instagram.jpg",
-  "Screenshot_20260214_143002_Instagram.jpg",
-  "Screenshot_20260214_143020_Instagram.jpg",
-  "Screenshot_20260214_142942_Instagram.jpg"
-];
 
-let index=0;
-
-// when YES clicked
-function showGallery(){
-  document.getElementById("message").style.display="none";
-  document.getElementById("gallery").style.display="block";
-  startSlideshow();
+// YES button
+function love(){
+alert("Yay!!! You made my day 💖✨");
+confetti();
 }
-  
+
+// Confetti
+function confetti(){
+for(let i=0;i<150;i++){
+let c=document.createElement("div");
+c.innerHTML="🎉";
+c.style.position="absolute";
+c.style.left=Math.random()*100+"%";
+c.style.top=Math.random()*100+"%";
+c.style.fontSize="25px";
+document.body.appendChild(c);
+}
+}
+
+// Floating hearts
+setInterval(()=>{
+let h=document.createElement("div");
+h.innerHTML="❤️";
+h.className="heart";
+h.style.left=Math.random()*100+"%";
+document.body.appendChild(h);
+},400);
+
 // Moving NO button
-let no=[
-  document.getElementById("noBtn");
-  no.addEventListener("mouseover",()=>{
-  no.style.top=Math.random()*80+"%";
-  no.style.left=Math.random()*80+"%";
-}
-  
-// slideshow function
-function startSlideshow(){
-  setInterval(()=>{
-    index=(index+1)%photos.length;
-    document.getElementById("slide").src=photos[index];
-  },3000); // change every 3 seconds
-}
+let no=document.getElementById("noBtn");
+no.addEventListener("mouseover",()=>{
+no.style.top=Math.random()*80+"%";
+no.style.left=Math.random()*80+"%";
+});
 </script>
 
 </body>
