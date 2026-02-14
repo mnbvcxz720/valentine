@@ -1,57 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Valentine's Day ❤️</title>
+<title>Happy Valentine's Day</title>
 
 <style>
 body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(45deg,#ff4e8a,#ff9a9e);
-  font-family:Arial;
-  color:white;
-  text-align:center;
-  overflow:hidden;
+text-align:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:sans-serif;
+overflow:hidden;
+height:100vh;
 }
 
-.card{
-  background:rgba(255,255,255,0.15);
-  padding:40px;
-  border-radius:20px;
-  backdrop-filter:blur(10px);
-  animation:float 3s infinite ease-in-out;
+h1{
+color:white;
+margin-top:80px;
+font-size:38px;
+}
+
+h2{color:white;}
+
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:12px;
+margin:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.yes{
+background:#ff4d6d;
+color:white;
+box-shadow:0 0 20px #ff4d6d;
+}
+
+.yes:hover{
+transform:scale(1.1);
+}
+
+.no{
+background:white;
+color:#ff4d6d;
+position:absolute;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 5s linear infinite;
 }
 
 @keyframes float{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
-  100%{transform:translateY(0);}
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
 }
-
-h1{font-size:40px;}
-p{font-size:20px;}
 </style>
-
 </head>
 
 <body>
 
-<div class="card">
-<h1>❤️ Happy Valentine's Day ❤️</h1>
+<h1>💖 Happy Valentine's Day 💖</h1>
+<h2>I really like you ❤️<br>Will you be my Valentine?</h2>
 
-<p>
-You are someone very special to me.<br><br>
+<button class="yes" onclick="love()">YES ❤️</button>
+<button class="no" id="noBtn">NO 😢</button>
 
-I really like you and I hope<br>
-you will be my Valentine. 💕<br><br>
+<!-- background music -->
+<!-- Tamil love song background -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/r3oAMDsC-8Y?autoplay=1&loop=1&playlist=r3oAMDsC-8Y"
+frameborder="0" allow="autoplay">
+</iframe>
 
-Will you be my Valentine?
-</p>
+<script>
 
-</div>
+// YES button
+function love(){
+alert("Yay!!! You made my day 💖✨");
+confetti();
+}
+
+// Confetti
+function confetti(){
+for(let i=0;i<150;i++){
+let c=document.createElement("div");
+c.innerHTML="🎉";
+c.style.position="absolute";
+c.style.left=Math.random()*100+"%";
+c.style.top=Math.random()*100+"%";
+c.style.fontSize="25px";
+document.body.appendChild(c);
+}
+}
+
+// Floating hearts
+setInterval(()=>{
+let h=document.createElement("div");
+h.innerHTML="❤️";
+h.className="heart";
+h.style.left=Math.random()*100+"%";
+document.body.appendChild(h);
+},400);
+
+// Moving NO button
+let no=document.getElementById("noBtn");
+no.addEventListener("mouseover",()=>{
+no.style.top=Math.random()*80+"%";
+no.style.left=Math.random()*80+"%";
+});
+</script>
 
 </body>
-</html>
+  </html>
